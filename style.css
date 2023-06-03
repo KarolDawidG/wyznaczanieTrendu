@@ -1,0 +1,88 @@
+body {
+    background-color: black;
+}
+
+@keyframes retro-blink {
+    0% {
+      color: white;
+      text-shadow: none;
+    }
+    50% {
+      color: red;
+      text-shadow: 1px 1px 4px red, -1px -1px 4px red;
+    }
+    100% {
+      color: white;
+      text-shadow: none;
+    }
+  }
+  
+  .left-section {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    padding: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #444;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #222;
+  }
+  
+  .right-section {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    padding: 20px;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  #wynikAValueA, #wynikAValueB, #wynikAValue19, #wynik {
+    display: inline-block;
+    animation: retro-blink 1s infinite;
+  }
+  
+  input[type="number"] {
+    padding: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    background-color: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #444;
+  }
+  
+  .table-container {
+    max-height: 200px; /* Dostosuj wysokość kontenera do preferencji */
+    overflow: auto;
+  }
