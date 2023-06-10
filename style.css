@@ -17,20 +17,40 @@ body {
   }
 }
 
-.left-section {
+.container-first,
+.container-second {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1px; /* Minimalna odległość między kontenerami */
+}
+
+h1 {
+  margin: 0; /* Usuń domyślne marginesy */
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.left-section,
+.right-section {
+  margin: auto;
   font-family: 'Courier New', monospace;
   font-size: 16px;
   color: white;
   background-color: black;
-  padding: 20px;
+  padding: 10px;
 }
 
 table {
   border-collapse: collapse;
-  width: 40%;
+  width: 100%;
+  height: 100px;
 }
 
-th, td {
+th,
+td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -45,19 +65,14 @@ tr:nth-child(even) {
   background-color: #222;
 }
 
-.right-section {
-  font-family: 'Courier New', monospace;
-  font-size: 16px;
-  color: white;
-  background-color: black;
-  padding: 20px;
-}
-
 p {
   margin-bottom: 10px;
 }
 
-#wynikAValueA, #wynikAValueB, #wynikAValue19, #wynik {
+#wynikAValueA,
+#wynikAValueB,
+#wynikAValue19,
+#wynik {
   display: inline-block;
   animation: retro-blink 1s infinite;
 }

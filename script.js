@@ -49,3 +49,33 @@ document.getElementById('wynikAValueA').textContent = wynikA.toFixed(2);
 document.getElementById('wynikAValueB').textContent = wynikB.toFixed(2);
 document.getElementById('wynikAValue19').textContent = wynik19.toFixed(2);
 document.getElementById('funkcja').textContent = `y = ${wynikA.toFixed(2)}x * ${wynikB.toFixed(2)}`;
+
+////////////////////////////////////////////////
+// wykres przedstawiający tab
+// +
+// licec
+const trace = {
+    x: x, // wartości osi X
+    y: y, // wartości osi Y
+    mode: 'lines',
+    line: {
+        color: 'blue'
+    }
+};
+
+const data = [trace];
+
+const layout = {
+    title: 'Zobrazowanie wartosci z Tab. 1',
+    width: 400,
+    height: 400,
+    xaxis: {
+        title: 'Masa ryby = X'
+    },
+    yaxis: {
+        title: 'Stężenie substancji chemicznej = Y'
+    }
+};
+
+Plotly.newPlot('myDiv', data, layout);
+

@@ -3,106 +3,118 @@
 <head>
     <title>Projekt</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
-<div class="left-section">
-    <h2>Tabela wartości x i y</h2>
-    <p>Masa ryby z gatunku Salvelinus = x <br>
-        Stężenie substancji chemicznej Aroclor 1254 (w ppm) = y</p>
-    <div class="table-container">
-        <table>
-            <thead>
-            <tr>
-                <th>Nr.</th>
-                <th>x</th>
-                <th>y</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>8</td>
-                <td>122</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>9</td>
-                <td>125</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>10</td>
-                <td>131</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>11</td>
-                <td>135</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>12</td>
-                <td>142</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>13</td>
-                <td>145</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>14</td>
-                <td>150</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>15</td>
-                <td>154</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>16</td>
-                <td>159</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>17</td>
-                <td>164</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>18</td>
-                <td>168</td>
-            </tr>
-            </tbody>
-        </table>
+<h1>Wyznaczanie trendu</h1>
+<div class="container-first">
+    <div class="right-section" id="myDiv"></div>
+
+    <div class="left-section">
+        <h2>Tabela wartości x i y</h2>
+        <p>Masa ryby z gatunku Salvelinus = x <br>
+            Stężenie substancji chemicznej Aroclor 1254 (w ppm) = y</p>
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Nr.</th>
+                    <th>x</th>
+                    <th>y</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>8</td>
+                    <td>122</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>9</td>
+                    <td>125</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>131</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>11</td>
+                    <td>135</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>12</td>
+                    <td>142</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>13</td>
+                    <td>145</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>14</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>15</td>
+                    <td>154</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>16</td>
+                    <td>159</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>17</td>
+                    <td>164</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>18</td>
+                    <td>168</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Tab. 1 : Dane empiryczne zależności dwóch zmiennych</p>
     </div>
-    <p>Tab. 1 : Dane empiryczne zależności dwóch zmiennych</p>
 </div>
 
-<div class="right-section">
-    <h3>Wznaczenie współczynników funkcji regresji liniowej</h3>
-    <p>Parametry oszacowane na podstawie Tab. 1 wynosząo opowiednio:<br>
-        a: <span id="wynikAValueA"></span><br>
-        b: <span id="wynikAValueB"></span></p>
-    <h3>Obliczona wartosc funkcji regresu wynosi:</h3>
-    <p><span id="funkcja"></span></p>
+<div class="container-second">
 
-    <p>Szacowana wartość "y" dla parametru "x" = 19 wynosi: <br>
-        <span id="wynikAValue19"></span>
-    </p>
-    <h3>Szacowanie wartości dla dowolnej liczby od 1 do 30:</h3>
-    <input
-            type="number"
-            id="wartoscInput"
-            min="1"
-            max="30">
-    <button onclick="szacowanie()">Szacuj</button>
-    <p id="wynik"></p>
+    <div class="right-section">
+        <h3>Wznaczenie współczynników funkcji regresji liniowej</h3>
+        <p>Parametry oszacowane na podstawie Tab. 1 wynosząo opowiednio:<br>
+            a: <span id="wynikAValueA"></span><br>
+            b: <span id="wynikAValueB"></span></p>
+    </div>
+
+    <div class="left-section">
+        <h3>Obliczona wartosc funkcji regresu wynosi:</h3>
+        <p><span id="funkcja"></span></p>
+
+        <p>Szacowana wartość "y" dla parametru "x" = 19 wynosi: <br>
+            <span id="wynikAValue19"></span>
+        </p>
+        <h3>Szacowanie wartości dla dowolnej liczby od 1 do 30:</h3>
+        <input
+                type="number"
+                id="wartoscInput"
+                min="1"
+                max="30">
+        <button onclick="szacowanie()">Szacuj</button>
+        <p id="wynik"></p>
+    </div>
+
 </div>
-
 <script src="script.js"></script>
+
 </body>
 </html>
-
