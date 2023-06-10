@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Projekt</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Projekt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="left-section">
-      <h2>Tabela wartości x i y</h2>
-      <p>Masa ryby z gatunku Salvelinus = x <br>
-      Stężenie substancji chemicznej Aroclor 1254 (w ppm) = y</p>
-      <div class="table-container">
+<div class="left-section">
+    <h2>Tabela wartości x i y</h2>
+    <p>Masa ryby z gatunku Salvelinus = x <br>
+        Stężenie substancji chemicznej Aroclor 1254 (w ppm) = y</p>
+    <div class="table-container">
         <table>
             <thead>
             <tr>
@@ -77,33 +77,32 @@
             </tr>
             </tbody>
         </table>
-      </div>
-      <p>Tab. 1 : Dane empiryczne zależności dwóch zmiennych</p>
     </div>
-    
-    <div class="right-section">
-        <h3>Wznaczenie współczynników funkcji regresji liniowej</h3>
-        <p>Parametry oszacowane na podstawie Tab. 1 wynosząo opowiednio:<br>
-            a: <span id="wynikAValueA"></span><br>
-            b: <span id="wynikAValueB"></span></p>
-            <h3>Obliczona wartosc funkcji regresu wynosi:</h3>
-            <p><span id="funkcja"></span></p>
+    <p>Tab. 1 : Dane empiryczne zależności dwóch zmiennych</p>
+</div>
 
-        <p>Szacowana wartość "y" dla parametru "x" = 19 wynosi: <br>
-            <span id="wynikAValue19"></span>
-        </p>
+<div class="right-section">
+    <h3>Wznaczenie współczynników funkcji regresji liniowej</h3>
+    <p>Parametry oszacowane na podstawie Tab. 1 wynosząo opowiednio:<br>
+        a: <span id="wynikAValueA"></span><br>
+        b: <span id="wynikAValueB"></span></p>
+    <h3>Obliczona wartosc funkcji regresu wynosi:</h3>
+    <p><span id="funkcja"></span></p>
+
+    <p>Szacowana wartość "y" dla parametru "x" = 19 wynosi: <br>
+        <span id="wynikAValue19"></span>
+    </p>
     <h3>Szacowanie wartości dla dowolnej liczby od 1 do 30:</h3>
-        <input 
-            type="number" 
-            id="wartoscInput" 
+    <input
+            type="number"
+            id="wartoscInput"
             min="1"
             max="30">
-        <button onclick="szacowanie()">Szacuj</button>
-            <p id="wynik"></p>
-    </div>
+    <button onclick="szacowanie()">Szacuj</button>
+    <p id="wynik"></p>
+</div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
 
