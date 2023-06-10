@@ -52,8 +52,7 @@ document.getElementById('funkcja').textContent = `y = ${wynikA.toFixed(2)}x * ${
 
 ////////////////////////////////////////////////
 // wykres przedstawiający tab
-// +
-// licec
+
 const trace = {
     x: x, // wartości osi X
     y: y, // wartości osi Y
