@@ -2,6 +2,23 @@
 const x = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 const y = [122, 125, 131, 135, 142, 145, 150, 154, 159, 164, 168];
 
+/// nowa funkcjonalnosc
+let y2 = [];
+
+const sendData = () => {
+  const dataTable = document.getElementById('data-table');
+  const rows = dataTable.getElementsByTagName('tr');
+  let y2 = [];
+  for (let i = 1; i < rows.length; i++) {
+    const yInput = document.getElementById(`yValue${i}`);
+    y2.push(parseInt(yInput.value));
+  }
+    wykres(x, y2);
+    return y2;
+};
+
+
+////////////////////////////////////////////////////////////////////////
 // funkcja obliczana sredniej arytmetycznej
 const obliczSrednia = el =>{
     return el.reduce((a, b) => a + b, 0) / el.length;
@@ -33,7 +50,6 @@ const szacowanie = () => {
     const numerInput = document.getElementById('wartoscInput');
     const numer = parseInt(numerInput.value);
     const wynik = Math.round(szacowanieDowolnegoX(numer, wynikA, wynikB));
-
     document.getElementById('wynik').textContent = `Oszacowana liczba dla wartości ${numer} = ${wynik}`;
 };
 
@@ -77,4 +93,32 @@ const layout = {
 };
 
 Plotly.newPlot('myDiv', data, layout);
+
+/// drugie ///////////////////////////
+const wykres = (x, xxx) =>{
+    const trace2 = {
+        x: x, // wartości osi X
+        y: xxx, // wartości osi Y
+        mode: 'lines',
+        line: {
+            color: 'red'
+        }
+    };
+
+    const data2 = [trace2];
+
+    const layout2 = {
+        title: 'Tab. 2',
+        width: 400,
+        height: 400,
+        xaxis: {
+            title: 'Masa ryby = X'
+        },
+        yaxis: {
+            title: 'Stężenie substancji chemicznej = Y'
+        }
+    };
+
+    Plotly.newPlot('myDivSecond', data2, layout2);
+};
 
