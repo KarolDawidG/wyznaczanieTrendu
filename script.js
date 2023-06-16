@@ -13,8 +13,7 @@ const sendData = () => {
     const yInput = document.getElementById(`yValue${i}`);
     y2.push(parseInt(yInput.value));
   }
-    wykres(x, y2);
-    return y2;
+    wykres(x, y2, nazwaWykresuDwa);
 };
 
 
@@ -64,9 +63,8 @@ const wynik19 = szacowanieDowolnegoX(19, wynikA, wynikB);
 document.getElementById('wynikAValueA').textContent = wynikA.toFixed(2);
 document.getElementById('wynikAValueB').textContent = wynikB.toFixed(2);
 document.getElementById('wynikAValue19').textContent = wynik19.toFixed(2);
-document.getElementById('funkcja').textContent = `y = ${wynikA.toFixed(2)}x * ${wynikB.toFixed(2)}`;
+document.getElementById('funkcja').textContent = `y = ${wynikA.toFixed(2)}x + ${wynikB.toFixed(2)}`;
 
-////////////////////////////////////////////////
 // wykres przedstawiający tab
 
 const trace = {
@@ -95,7 +93,8 @@ const layout = {
 Plotly.newPlot('myDiv', data, layout);
 
 /// drugie ///////////////////////////
-const wykres = (x, xxx) =>{
+const nazwaWykresuDwa = 'myDivSecond';
+const wykres = (x, xxx, nazwaWykresuDwa) =>{
     const trace2 = {
         x: x, // wartości osi X
         y: xxx, // wartości osi Y
@@ -108,7 +107,6 @@ const wykres = (x, xxx) =>{
     const data2 = [trace2];
 
     const layout2 = {
-        title: 'Tab. 2',
         width: 400,
         height: 400,
         xaxis: {
@@ -119,6 +117,16 @@ const wykres = (x, xxx) =>{
         }
     };
 
-    Plotly.newPlot('myDivSecond', data2, layout2);
+    Plotly.newPlot(nazwaWykresuDwa, data2, layout2);
 };
+
+//rysowanie wykresu funkcji estymowanej
+const nazwaWykresuTrzy = 'myDivThird';
+const nowyX = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const nowyY = [];
+for (let numer = 1; numer <= nowyX.length; numer++) {
+    nowyY.push(szacowanieDowolnegoX(numer, wynikA, wynikB).toFixed(2));
+}
+wykres(nowyX, nowyY, nazwaWykresuTrzy);
+
 

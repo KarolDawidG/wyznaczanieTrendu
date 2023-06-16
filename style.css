@@ -1,7 +1,9 @@
 body {
   background-color: black;
 }
-
+p {
+  color: white;
+}
 @keyframes retro-blink {
   0% {
     color: white;
