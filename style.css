@@ -2,11 +2,15 @@ body {
   font-family: 'Comic Sans MS', cursive;
   margin: 0;
   padding: 20px;
-  background-image: url('https://i.imgur.com/nffpUCz.gif');
-  background-size: cover;
+  background-color: black;
+  /* background-image: url('https://media.tenor.com/bAf3Y3qeRMkAAAAj/dont-go-back-van-gelder.gif'); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
   color: #fff;
   animation: rainbow 5s linear infinite;
 }
+
 
 @keyframes rainbow {
   0% {
