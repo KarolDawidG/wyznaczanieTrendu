@@ -81,6 +81,7 @@ const wykres = (osX, osY, nazwaWykresu) =>{
     };
     Plotly.newPlot(nazwaWykresu, data, layout);
 };
+
 // wywolanie wykresow
 
 //wykres wartosci Tab 1.
@@ -106,7 +107,99 @@ const sendData = () => {
       wykres(x, y2, nazwaWykresuDwa);                   
   };
 
+/////////////////////////////////////////////////////////////////////
+//                       New features                              //
+/////////////////////////////////////////////////////////////////////
 
+// Obliczanie wartości krzywych ufności dla funkcji estymowanej
+const calculateUfnosc = (numer, wynikA, wynikB, x, y) => {
+    const wspolczynnikRyzyka = 1.96; // dla poziomu ufności 95%
+  
+    // Obliczanie wartości y dla danego x
+    const yEstymowane = numer * wynikA + wynikB;
+  
+    // Obliczanie odchylenia standardowego
+    const sumaKwadratowReszt = y.reduce((sum, yi, index) => {
+      const yEstymowanei = x[index] * wynikA + wynikB;
+      return sum + Math.pow(yi - yEstymowanei, 2);
+    }, 0);
+    const odchylenieStandardowe = Math.sqrt(sumaKwadratowReszt / (y.length - 2));
+  
+    // Obliczanie wartości krzywych ufności
+    const ufoscGorna = yEstymowane + wspolczynnikRyzyka * odchylenieStandardowe;
+    const ufoscDolna = yEstymowane - wspolczynnikRyzyka * odchylenieStandardowe;
+  
+    return {
+      yEstymowane,
+      ufoscGorna,
+      ufoscDolna
+    };
+  };
+
+const ufnoscGORNA = [];
+const ufnoscDOLNA = [];
+
+  for (let numer = 8; numer <= 18; numer++) {
+    const ufnosc = calculateUfnosc(numer, wynikA, wynikB, x, y);
+    const ufoscGorna = ufnosc.ufoscGorna;
+    const ufoscDolna = ufnosc.ufoscDolna;
+    ufnoscGORNA.push((ufoscGorna).toFixed(2));
+    ufnoscDOLNA.push((ufoscDolna).toFixed(2));
+    
+  }
+  
+  console.log(`Górna wartość ufności: ${ufnoscGORNA}`);
+  console.log(`Dolna wartość ufności: ${ufnoscDOLNA}`);
+
+  const wykrespodwojny = (osX, osY, osY1, osY2, nazwaWykresu) => {
+    const trace1 = {
+      x: osX,
+      y: osY1,
+      mode: 'lines',
+      line: {
+        color: 'red'
+      },
+      name: 'Ufnosc Gorna'
+    };
+  
+    const trace2 = {
+      x: osX,
+      y: osY2,
+      mode: 'lines',
+      line: {
+        color: 'blue'
+      },
+      name: 'Ufnosc Dolna'
+    };
+
+    const trace3 = {
+        x: osX,
+        y: osY,
+        mode: 'lines',
+        line: {
+          color: 'grey'
+        },
+        name: 'Tab 1.'
+      };
+  
+    const data = [trace1, trace2, trace3];
+  
+    const layout = {
+      title: nazwaWykresu,
+      width: 400,
+      height: 400,
+      xaxis: {
+        title: 'Masa ryby = X'
+      },
+      yaxis: {
+        title: 'Stężenie substancji chemicznej = Y'
+      }
+    };
+  
+    Plotly.newPlot(nazwaWykresu, data, layout);
+  };
+  const wykresUfnosci = 'Wykres ufnosci';
+  wykrespodwojny(x, y, ufnoscGORNA, ufnoscDOLNA, wykresUfnosci);
 
 
 

@@ -7,7 +7,9 @@
 </head>
 
 <body>
+
 <h1>Projekt: Wyznaczanie trendu</h1>
+
 <div class="container-first">
     <div class="right-section" id="Wykres Tab 1."></div>
 
@@ -15,183 +17,192 @@
         <h2>Tabela wartości x i y</h2>
         <p>Masa ryby z gatunku Salvelinus = x <br>
             Stężenie substancji chemicznej Aroclor 1254 (w ppm) = y</p>
-        <div class="table-container">
-            <table>
-                <thead>
-                <tr>
-                    <th>Nr.</th>
-                    <th>x</th>
-                    <th>y</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>8</td>
-                    <td>122</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>9</td>
-                    <td>125</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>10</td>
-                    <td>131</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>11</td>
-                    <td>135</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>12</td>
-                    <td>142</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>13</td>
-                    <td>145</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>14</td>
-                    <td>150</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>15</td>
-                    <td>154</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>16</td>
-                    <td>159</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>17</td>
-                    <td>164</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>18</td>
-                    <td>168</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Nr.</th>
+                        <th>x</th>
+                        <th>y</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>122</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>125</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>10</td>
+                        <td>131</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>11</td>
+                        <td>135</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>12</td>
+                        <td>142</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>13</td>
+                        <td>145</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>14</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>15</td>
+                        <td>154</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>16</td>
+                        <td>159</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>17</td>
+                        <td>164</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>18</td>
+                        <td>168</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Tab. 1 : Dane empiryczne zależności dwóch zmiennych</p>
         </div>
-        <p>Tab. 1 : Dane empiryczne zależności dwóch zmiennych</p>
-    </div>
 </div>
 
 <div class="container-second">
-
     <div class="right-section">
+
         <h3>Wznaczenie współczynników funkcji regresji liniowej</h3>
         <p>Parametry oszacowane na podstawie Tab. 1 wynosząo opowiednio:<br>
             a: <span id="wynikAValueA"></span><br>
             b: <span id="wynikAValueB"></span></p>
-    </div>
 
-    <div class="left-section">
         <h3>Obliczona wartosc funkcji regresu wynosi:</h3>
         <p><span id="funkcja"></span></p>
-        <p>Wykres funkcji estymowanej</p>
-        <div class="right-section" id="Funkcja estymowana"></div>
-
         <p>Szacowana wartość "y" dla parametru "x" = 19 wynosi: <br>
-            <span id="wynikAValue19"></span>
-        </p>
+            <span id="wynikAValue19"></span></p>
+
         <h3>Szacowanie wartości dla dowolnej liczby od 1 do 30:</h3>
         <input
                 type="number"
                 id="wartoscInput"
                 min="1"
                 max="30">
-        <button onclick="szacowanie()">Szacuj</button>
-        <p id="wynik"></p>
+        <button onclick="szacowanie()">Szacuj</button><p id="wynik"></p>
+    </div>
+
+    <div class="left-section">
+        <div class="right-section" id="Funkcja estymowana"></div>
     </div>
 </div>
 
 <h2>Edycja wartości parametru stężenia substancji chemicznej Aroclor 1254 (w ppm) = y</h2>
-<p>Wpisz w poniższej tabeli, nowe wartości dla parametru 'y'</p>
-<p>oraz naciśnij 'Wyślij' aby wyświetlić wartości na wykresie.</p>
+    <p>Wpisz w poniższej tabeli, nowe wartości dla parametru 'y'</p>
+    <p>oraz naciśnij 'Wyślij' aby wyświetlić wartości na wykresie.</p>
+    <div class="container-third">
+        <div class="right-section" id="Wykres Tab 2."></div>
 
-<div class="container-first">
-    <div class="right-section" id="Wykres Tab 2."></div>
-
-    <div class="left-section">
-        
-        <div class="table-container">
-            <table id="data-table">
-                <thead>
-                    <tr>
-                        <th>Nr.</th>
-                        <th>x</th>
-                        <th>y</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>8</td>
-                        <td><input type="number" id="yValue1" value="" min="100" max="300"></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>9</td>
-                        <td><input type="number" id="yValue2" value="" min="100" max="300"></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>10</td>
-                        <td><input type="number" id="yValue3" value="" min="100" max="300"></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>11</td>
-                        <td><input type="number" id="yValue4" value="" min="100" max="300"></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>12</td>
-                        <td><input type="number" id="yValue5" value="" min="100" max="300"></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>13</td>
-                        <td><input type="number" id="yValue6" value="" min="100" max="300"></td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>14</td>
-                        <td><input type="number" id="yValue7" value="" min="100" max="300"></td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>15</td>
-                        <td><input type="number" id="yValue8" value="" min="100" max="300"></td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>16</td>
-                        <td><input type="number" id="yValue9" value="" min="100" max="300"></td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>17</td>
-                        <td><input type="number" id="yValue10" value="" min="100" max="300"></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="left-section">
+            <div class="table-container">
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nr.</th>
+                            <th>x</th>
+                            <th>y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>8</td>
+                            <td><input type="number" id="yValue1" value="" min="100" max="300"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>9</td>
+                            <td><input type="number" id="yValue2" value="" min="100" max="300"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>10</td>
+                            <td><input type="number" id="yValue3" value="" min="100" max="300"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>11</td>
+                            <td><input type="number" id="yValue4" value="" min="100" max="300"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>12</td>
+                            <td><input type="number" id="yValue5" value="" min="100" max="300"></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>13</td>
+                            <td><input type="number" id="yValue6" value="" min="100" max="300"></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>14</td>
+                            <td><input type="number" id="yValue7" value="" min="100" max="300"></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>15</td>
+                            <td><input type="number" id="yValue8" value="" min="100" max="300"></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>16</td>
+                            <td><input type="number" id="yValue9" value="" min="100" max="300"></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>17</td>
+                            <td><input type="number" id="yValue10" value="" min="100" max="300"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button onclick="sendData()">Wyślij</button>
+            <p>Tab. 2 : Nowe dane empiryczne zależności dwóch zmiennych</p>
         </div>
-        <button onclick="sendData()">Wyślij</button>
-        <p>Tab. 2 : Nowe dane empiryczne zależności dwóch zmiennych</p>
-    </div>
 </div>
+
+<h3>Wznaczęnia wartosci krzywych ufnosci funkcji</h3>
+    <div class="container-fourt">
+        <div class="right-section" id="Wykres ufnosci"></div>
+    
+        <div class="left-section">
+        <p>Wykres przedstawia oszacowane wartosci górnej granicy ufnosci oraz dolne granice ufności dla podanych          parametrów.<br> 
+            <p>Linia niebieska przedstawia dolną granicę ufności.<br>
+            Linia czerwona przedstawia górną granicę ufności.<br>
+            Linia szara przedstawia dane z Tab 1.</p>
+            <p>Jak widać na wskazanym wykresie, dane z Tab 1, znajdują się pomiędzy liniami wyznaczającymi granice krzywych ufności funkcji.</p>
+        </div>
+    </div>     
 
 <script src="script.js"></script>
 

@@ -1,7 +1,7 @@
 body {
   background-color: black;
 }
-p {
+p, h3 {
   color: white;
 }
 @keyframes retro-blink {
@@ -19,8 +19,7 @@ p {
   }
 }
 
-.container-first,
-.container-second {
+.container-first, .container-second, .container-third, .container-fourt {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1px; /* Minimalna odległość między kontenerami */
